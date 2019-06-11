@@ -38,13 +38,22 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
         if @article.update(article_params)
             redirect_to @article
+            #Redirects to updated article post
         else
             render 'edit'
+            #Renders the same screen, with errors listed
         end
+    end
+    # Finds article given params, then deletes it, No new view needed
+    def destroy
+        @article = Article.find(params[:id])
+        @article.destroy
+        redirect_to articles_path
     end
     private
         # Private function that returns allowed params for Article
         def article_params
             params.require(:article).permit(:title, :text)
         end
+
 end
