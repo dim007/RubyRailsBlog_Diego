@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version - 2.5.5 p157
 
-Things you may want to cover:
+* System dependencies - Rails 5.2.3 | Sqlite3 3.28.0
 
-* Ruby version
+* Configuration - TBD
 
-* System dependencies
+* Database creation - TBD
 
-* Configuration
+* Database initialization - TBD
 
-* Database creation
+* How to run the test suite - TBD
 
-* Database initialization
+* Services (job queues, cache servers, search engines, etc.) - TBD
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Deployment instructions - TBD
 
 * ...
