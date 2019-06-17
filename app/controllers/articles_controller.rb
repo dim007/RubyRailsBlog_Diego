@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+    ## Add Authetication to prevent user/viewer access to Create & Delete & Edit
+    ## Password on Github is different that real web domain password 
+    http_basic_authenticate_with name: "admin", password: "password", except:
+    [:index, :show]
+
     def index
         @articles = Article.all
     end
@@ -13,37 +18,37 @@ class ArticlesController < ApplicationController
     end
     def create
 
-        # This line calls the private function instead
+        ## This line calls the private function instead
         @article = Article.new(article_params)
         if @article.save
             redirect_to @article
         else
             render 'new' 
-            # 'render' here allows for 'article' obj to still exist
-            # 'render' also prevents browser from issueing another request
+            ## 'render' here allows for 'article' obj to still exist
+            ## 'render' also prevents browser from issueing another request
         end
 
-        #This displays the paramerters from the incoming form to page
+        ## This displays the paramerters from the incoming form to page
         #render plain: params[:article].inspect
     end
     def update
         @article = Article.find(params[:id])
         if @article.update(article_params)
             redirect_to @article
-            #Redirects to updated article post
+            ## Redirects to updated article post
         else
             render 'edit'
-            #Renders the same screen, with errors listed
+            ## Renders the same screen, with errors listed
         end
     end
-    # Finds article given params, then deletes it, No new view needed
+    ## Finds article given params, then deletes it, No new view needed
     def destroy
         @article = Article.find(params[:id])
         @article.destroy
         redirect_to articles_path
     end
     private
-        # Private function that returns allowed params for Article
+        ## Private function that returns allowed params for Article
         def article_params
             params.require(:article).permit(:title, :text)
         end
