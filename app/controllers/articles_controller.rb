@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
     private
         ## Private function that returns allowed params for Article
         def article_params
-            params.require(:article).permit(:title, :text)
+            params.require(:article).permit(:title, :text, :picture)
         end
 
 end
