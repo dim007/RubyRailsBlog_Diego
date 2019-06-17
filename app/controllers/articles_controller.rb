@@ -12,17 +12,9 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
     end
     def create
-        # Did not work, params in ruby are strong params, need explicit permission
-        #@article = Article.new(params[:article])
-        # This is a one line fix, moved to function call article_params
-        #@article = Article.new(params.require(:article).permit(:title, :text))
-        
+
         # This line calls the private function instead
         @article = Article.new(article_params)
-         
-        # Added validation to article in 'model', must confirm valid 
-        #@article.save
-        #redirect_to @article
         if @article.save
             redirect_to @article
         else
