@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
     ## Prevent user/viewer access to Comment Destroy function
     ## Password on Github is different that real web domain password 
-    http_basic_autheticate_with name: "admin", password: "password", only:
+    http_basic_authenticate_with name: "admin", password: "password", only:
     :destroy
     def create
         @article = Article.find(params[:article_id])
