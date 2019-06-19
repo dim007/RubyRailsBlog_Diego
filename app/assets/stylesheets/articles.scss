@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-    background-image: image-url('background.gif'); // link to /assets/images/background.png
+    background-image: image-url('background7.gif'); // link to /assets/images/background.png
     background-size: cover;
-    color: #c5c2c2;
-    font-size: 14px;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-attachment: scroll;
+    color: #c4c5c2;
+    font-size: 20px;
     line-height: 1.42857;
+    grid-area: main;
 }
