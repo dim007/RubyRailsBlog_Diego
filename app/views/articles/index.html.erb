@@ -2,9 +2,8 @@
 <%-# React will render article_react in "root" -%>
 <%= javascript_pack_tag 'article_react'%>
 
-<h1>Ruby on Rails Portfolio Project</h1>
 <%= react_component("ArticleToolBar", home: true) %>
-
+<h1>Ruby on Rails Portfolio Project</h1>
 <%= link_to 'New article', new_article_path %>
 <table>
     <tr>
