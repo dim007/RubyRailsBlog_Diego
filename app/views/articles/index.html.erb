@@ -1,32 +1,24 @@
 <%= javascript_pack_tag 'application' %>
 <%-# React will render article_react in "root" -%>
+<%-# NOT USED" -%>
 <%= javascript_pack_tag 'article_react'%>
 
 <%= react_component("ArticleToolBar", home: true) %>
-<h1>Ruby on Rails Portfolio Project</h1>
-<%= link_to 'New article', new_article_path %>
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Text</th>
-        <th></th>
-    </tr>
 
+<h1>Ruby on Rails Portfolio Project</h1>
+
+
+<div class="container">
     <% @articles.each do |article| %>
         <tr>
-            <%= react_component("ArticleCard", title: article.title , body: article.text) %>
-            <td><%= link_to 'Show', article_path(article) %></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
-            <%-# 2nd arg for Delete is the name of the route-%>
-            <%-# method: :delete, :data are HTML5 attributes for pop-up dialogue-%>
-            <%-# via pre-made file app/views/layoute/application.html.erb-%>
-            <td><%= link_to 'Delete',article_path(article),
-                method: :delete,
-                data: {confirm: 'Are you sure?' } %></td>
+            <%= react_component("ArticleCard", title: article.title , body: article.text, id: article.id) %>
         </tr>
     <% end %>
-</table>
+</div>
 
+
+
+<%-# NOT USED" -%>
 <%-# React will render inside root (for my_example_checkpoint.jsx)-%>
 <div id="root">
 </div>
