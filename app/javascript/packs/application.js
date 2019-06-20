@@ -20,3 +20,7 @@ console.log('Hello World from Webpacker')
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
+
+//THIS IS NEEDED FOR SHARDS TO WORK
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'shards-ui/dist/css/shards.min.css';

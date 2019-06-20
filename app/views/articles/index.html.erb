@@ -1,5 +1,10 @@
 <%= javascript_pack_tag 'application' %>
+<%-# React will render article_react in "root" -%>
+<%= javascript_pack_tag 'article_react'%>
+
 <h1>Ruby on Rails Portfolio Project</h1>
+<%= react_component("ArticleToolBar", home: true) %>
+
 <%= link_to 'New article', new_article_path %>
 <table>
     <tr>
@@ -10,8 +15,7 @@
 
     <% @articles.each do |article| %>
         <tr>
-            <td><%= article.title %></td>
-            <td><%= article.text %></td>
+            <%= react_component("ArticleCard", title: article.title , body: article.text) %>
             <td><%= link_to 'Show', article_path(article) %></td>
             <td><%= link_to 'Edit', edit_article_path(article) %></td>
             <%-# 2nd arg for Delete is the name of the route-%>
@@ -23,3 +27,12 @@
         </tr>
     <% end %>
 </table>
+
+<%-# React will render inside root (for my_example_checkpoint.jsx)-%>
+<div id="root">
+</div>
+<%-# React will render inside root (for my_examparticle_react.jsx)-%>
+<%= content_tag :div,
+    id: "root1",
+    data: @articles.to_json do %>
+<% end %>
