@@ -12,6 +12,8 @@
     <% @articles.each do |article| %>
         <tr>
             <%= react_component("ArticleCard", title: article.title , body: article.text, id: article.id) %>
+            <br/>
+            <br/>
         </tr>
     <% end %>
 </div>

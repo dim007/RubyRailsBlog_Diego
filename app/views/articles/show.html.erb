@@ -1,23 +1,23 @@
+<%= javascript_pack_tag 'application' %>
 <%= react_component("ArticleToolBar") %>
 
-<p>
-    <strong>Title:</strong>
-    <%= @article.title %>
-</p>
-<p>
-    <strong>Text:</strong>
-    <%= @article.text %>
-</p>
+<br/>
+<br/>
+<br/>
+<div class="container">
+    <%= react_component("ArticleCardShow", title: @article.title , body: @article.text, id: @article.id) %>
 
-<%-# Display existing comments -%>
-<h2>Comments</h2>
-<%-# calls partial _comments, replaces "for each comment render"-%>
-<%= render @article.comments %>
-
-<%-# Adding Comment Form for Article display page -%>
-<h2>Add a comment:</h2>
-<%-# calls comment/_form partial, renders new comment form -%>
-<%= render 'comments/form' %>
-
+    <%-# Display existing comments -%>
+    <br/>
+    <br/>
+    <h2>Comments:</h2>
+    <%-# calls partial _comments, replaces "for each comment render"-%>
+    <%= render @article.comments %>
+    <br/>
+    <%-# Adding Comment Form for Article display page -%>
+    <h2>Add a comment:</h2>
+    <%-# calls comment/_form partial, renders new comment form -%>
+    <%= render 'comments/form' %>
+</div>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
