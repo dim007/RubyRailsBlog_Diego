@@ -22,5 +22,6 @@ var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
 
 //THIS IS NEEDED FOR SHARDS TO WORK
+import { Alert } from "shards-react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'shards-ui/dist/css/shards.min.css';

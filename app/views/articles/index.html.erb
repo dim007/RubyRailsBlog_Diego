@@ -1,7 +1,3 @@
-<%= javascript_pack_tag 'application' %>
-<%-# React will render article_react in "root" -%>
-<%-# NOT USED" -%>
-<%= javascript_pack_tag 'article_react'%>
 
 <%= react_component("ArticleToolBar", home: true) %>
 
@@ -18,14 +14,3 @@
     <% end %>
 </div>
 
-
-
-<%-# NOT USED" -%>
-<%-# React will render inside root (for my_example_checkpoint.jsx)-%>
-<div id="root">
-</div>
-<%-# React will render inside root (for my_examparticle_react.jsx)-%>
-<%= content_tag :div,
-    id: "root1",
-    data: @articles.to_json do %>
-<% end %>

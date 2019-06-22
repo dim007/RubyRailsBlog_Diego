@@ -1,5 +1,3 @@
-
-<%= javascript_pack_tag 'application' %>
 <%-# _comment is a view a 'partial', refactored code from show.html.erb-%>
 <%= react_component("CommentCard", title: comment.commenter , body: comment.body, article_id: comment.article.id , comment_id: comment.id) %>
 
