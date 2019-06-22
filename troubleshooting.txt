@@ -1,0 +1,18 @@
+When installing React:
+	At the top of every html.erb file using React Components
+		From: https://github.com/reactjs/react-rails
+		<%= javascript_pack_tag 'application' %>
+Getting shards to work:
+	Need these two at the bottom of application.js
+		From: https://github.com/DesignRevision/shards-ui
+		// app.js
+		import 'bootstrap/dist/css/bootstrap.min.css';
+		import 'shards-ui/dist/css/shards.min.css';
+
+Getting AWS beanstalk to delpoy rails application
+	1. Make sure to generate secret key on rails
+			$ rails secret
+		Copy the result into Beanstalk -> Env Configuration -> Env Variables
+			SECRET_KEY_BASE = {Paste}
+	2. Run $ Rake db:migrate RAILS_ENV=production
+	3. Deploy on AWS
