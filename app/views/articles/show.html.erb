@@ -4,8 +4,7 @@
 <br/>
 <br/>
 <div class="container">
-    <%= react_component("ArticleCardShow", title: @article.title , body: @article.text, id: @article.id) %>
-
+    <%= react_component("ArticleCardShow", title: @article.title , body: @article.text, id: @article.id, picture: url_for(@article.picture)) %>
     <%-# Display existing comments -%>
     <br/>
     <br/>

@@ -18,7 +18,7 @@ export default function ArticleCard(props) {
   return (
     <Card style={{ maxWidth: "800px" }}>
       <CardHeader>{props.title}</CardHeader>
-      <CardImg src={props.img} />
+      <CardImg src={props.picture} />
       <CardBody>
         <CardTitle>{props.title}</CardTitle>
         <p>{props.body}</p>

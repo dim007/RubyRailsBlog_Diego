@@ -17,7 +17,6 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
     end
     def create
-
         ## This line calls the private function instead
         @article = Article.new(article_params)
         if @article.save
@@ -51,7 +50,7 @@ class ArticlesController < ApplicationController
     private
         ## Private function that returns allowed params for Article
         def article_params
-            params.require(:article).permit(:title, :text, :picture1, :picture2,  :picture3);
+            params.require(:article).permit(:title, :text, :picture);
         end
 
 end

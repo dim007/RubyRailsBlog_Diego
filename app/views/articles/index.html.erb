@@ -7,7 +7,7 @@
 <div class="container">
     <% @articles.each do |article| %>
         <tr>
-            <%= react_component("ArticleCard", title: article.title , body: article.text, id: article.id) %>
+            <%= react_component("ArticleCard", title: article.title , body: article.text, id: article.id, picture: url_for(article.picture)) %>
             <br/>
             <br/>
         </tr>

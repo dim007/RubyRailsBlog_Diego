@@ -3,6 +3,9 @@ class Article < ApplicationRecord
     # Destroys associated comments w/ a given article
     has_many :comments, dependent: :destroy
 
+    # Article Image added
+    has_one_attached :picture, dependent: :destroy
+    
     # this inherited func validates data in field 'title'
     validates :title, presence: true, length: { minimum: 5 }
 end
