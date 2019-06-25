@@ -31,6 +31,7 @@ class ArticlesController < ApplicationController
         ## This displays the paramerters from the incoming form to page
         #render plain: params[:article].inspect
     end
+    ## Saves editted article, checks requirements first.
     def update
         @article = Article.find(params[:id])
         if @article.update(article_params)
@@ -50,7 +51,7 @@ class ArticlesController < ApplicationController
     private
         ## Private function that returns allowed params for Article
         def article_params
-            params.require(:article).permit(:title, :text, :picture)
+            params.require(:article).permit(:title, :text, :picture1, :picture2,  :picture3);
         end
 
 end
