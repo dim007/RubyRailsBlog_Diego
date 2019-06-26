@@ -8,14 +8,14 @@
     <%-# Display existing comments -%>
     <br/>
     <br/>
-    <h2>Comments:</h2>
+
     <%-# calls partial _comments, replaces "for each comment render"-%>
-    <%= render @article.comments %>
-    <br/>
-    <%-# Adding Comment Form for Article display page -%>
-    <h2>Add a comment:</h2>
+
     <%-# calls comment/_form partial, renders new comment form -%>
     <%= render 'comments/form' %>
+    <br/>
+    <%= render @article.comments %>
+
 </div>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

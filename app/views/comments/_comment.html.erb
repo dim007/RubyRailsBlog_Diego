@@ -1,13 +1,4 @@
 <%-# _comment is a view a 'partial', refactored code from show.html.erb-%>
-<%= react_component("CommentCard", title: comment.commenter , body: comment.body, article_id: comment.article.id , comment_id: comment.id) %>
 
-
-
-<%-# This Delete comment function replaced with:
-   #<Button data-confirm="Are you sure?" data-method='delete' href={'/articles/' + props.article_id + '/comments/' + props.comment_id} theme='danger'>Delete Comment</Button>#
--%>
-<%-#<p>
-    #<%= link_to 'Destroy Comment', [comment.article, comment],
-     #   method: :delete, 
-     #   data: {confirm: 'Are you sure?'} %>
-#</p> -%>
+<%= if comment.commenter && comment.body then react_component("CommentCard", title: comment.commenter , body: comment.body, article_id: comment.article.id , comment_id: comment.id) end %>
+<br/>
