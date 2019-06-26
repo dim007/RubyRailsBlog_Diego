@@ -1,5 +1,5 @@
 <%= form_with(model: [ @article, @article.comments.build ], local:true) do |form| %>
-    <%= react_component("CommentForm") %>
+    <%= react_component "CommentForm", comment: [ @article, @article.comments.build ] %>
 
     <p>
         <%= form.label :commenter %><br>
