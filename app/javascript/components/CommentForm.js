@@ -3,40 +3,60 @@ import {   Button,  FormTextarea , Card, CardHeader, CardTitle, CardBody, Form, 
 
 
 class CommentForm extends React.Component {
-  //To modify outside data, pass in props corresponding to outside data
+  //To modify outside data, configure your text inputs with the correct name, in this case name="comment[body]"
   constructor(props) {
     super(props);
-    this.state = {commenter: props.comment.commenter, body: props.comment.body}
+    this.state = {name: "", text: ""}
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
   }
   handleNameChange(event) {
-    this.setState({commenter: event.target.value});
+    this.setState({name: event.target.value});
   }
   handleTextChange(event) {
-    this.setState({body: event.target.value});
+    this.setState({text: event.target.value});
   }
   handleSubmit(event){
-    alert("VALUE:" + this.state.body); 
+    alert("VALUE:" + this.state.text); 
     event.preventDefault();
   }
-  render() {
+  //This render uses "<Form>", this messes with form in the outer loop in _form.htlm.erb for comments.
+  renderOLD() {
     return (
       <Card style={{ maxWidth: "600px" }}>
           <CardHeader><CardTitle>{"Add a comment:"}</CardTitle></CardHeader>
           <CardBody>
-              <Form onSubmit={this.handleSubmit}>
-                  <label htmlFor="#commenter">Name</label>
-                  <FormInput type="text" name="comment[commenter]" value={this.state.commenter} placeholder="Alias" onChange={this.handleNameChange}/>
+              <Form >
+                  <label htmlFor="#name">Name</label>
+                  <FormInput type="text" name="comment[commenter]" value={this.state.name} placeholder="Alias" onChange={this.handleNameChange}/>
                   
-                  <label htmlFor="#body">Comment</label>
-                  <FormTextarea type="text" name="comment[body]" value={this.state.body} placeholder="Text" onChange={this.handleTextChange}/>
+                  <label htmlFor="#comment">Comment</label>
+                  <FormTextarea type="text" name="comment[body]" value={this.state.text} placeholder="Text" onChange={this.handleTextChange}/>
                   <br/>
                   <Button outline theme="success" type="submit">Submit</Button>
               </Form>
           </CardBody>
       </Card>
+    );
+  }
+  render() {
+    return (
+      <div>
+        <Card style={{ maxWidth: "600px"}}>
+          <CardHeader><CardTitle>{"Add a comment:"}</CardTitle></CardHeader>
+          <CardBody>
+            <label htmlFor="#name">Name</label>
+            <FormInput type="text" name="comment[commenter]" value={this.state.name} placeholder="Alias" onChange={this.handleNameChange}/>
+
+            <label htmlFor="#comment">Comment</label>
+            <FormTextarea type="text" name="comment[body]" value={this.state.text} placeholder="Text" onChange={this.handleTextChange}/>
+            <br/>
+            <Button outline theme="success" type="submit">Submit</Button>
+
+          </CardBody>
+        </Card>
+      </div>
     );
   }
 }
