@@ -68,6 +68,11 @@ export default class ArticleNavBar extends React.Component {
           </Nav>
           <Nav navbar className="ml-auto"> 
            <NavItem>
+              <NavLink href="/articles/new" active>
+                Create Article
+              </NavLink>
+           </NavItem>
+           <NavItem>
               <NavLink href="#" active>
                 Sign In
               </NavLink>
