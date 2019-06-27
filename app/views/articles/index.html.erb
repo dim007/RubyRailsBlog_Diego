@@ -1,14 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <nav>
+    <br/>
+    <br/>
+    <br/>
+    <%= react_component("ArticleNavBar") %>
+  </nav>
 
-<%= react_component("ArticleNavBar") %>
+  <body>
+    <div align="center">
+        <% @articles.each do |article| %>
+            <div id='ArticleCardDiv'>
+                <%= react_component("ArticleCard", title: article.title , body: article.text, id: article.id, picture: url_for(article.picture)) %>
+                <br/>
+                <br/>
+            </div>
+        <% end %>
+    </div>
 
-<div class="container">
-    <% @articles.each do |article| %>
-        <tr>
-            <%= react_component("ArticleCard", title: article.title , body: article.text, id: article.id, picture: url_for(article.picture)) %>
-            <br/>
-            <br/>
-        </tr>
-    <% end %>
-</div>
+    <%= react_component("ArticleToolBar", home: true) %>
+  </body>
+</html>
 
-<%= react_component("ArticleToolBar", home: true) %>
+
+

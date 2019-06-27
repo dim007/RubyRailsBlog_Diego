@@ -47,22 +47,22 @@ export default class ArticleNavBar extends React.Component {
   //className="ml-auto" this aligns to the right
   render() {
     return (
-      <Navbar type="dark" theme="primary" expand="md">
-        <NavbarBrand href="#">Diego Martinez</NavbarBrand>
+      <Navbar type="dark" fixed="top" theme="dark" expand="md">
+        <NavbarBrand href="/articles">Diego Martinez</NavbarBrand>
         <NavbarToggler onClick={this.toggleNavbar} />
         
         <Collapse open={this.state.collapseOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink active href="#">
+              <NavLink active href="/about">
                 About
               </NavLink>
             </NavItem>
             <Dropdown open={this.state.dropdownOpen} toggle={this.toggleDropdown}>
               <DropdownToggle nav caret>Contact</DropdownToggle>
               <DropdownMenu>
-                <DropdownItem>Email</DropdownItem>
-                <DropdownItem>LinkedIn</DropdownItem>
+                <DropdownItem><a href="mailto:diegomartinezzero@gmail.com?Subject=Hello%20again" target="_top">Email</a></DropdownItem>
+                <DropdownItem href="#"><a href="https://www.linkedin.com/in/diego-martinez-001/">LinkedIn</a></DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </Nav>

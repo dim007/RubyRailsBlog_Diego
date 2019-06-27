@@ -1,7 +1,10 @@
-<%= react_component("ArticleToolBar", create: true) %>
+<%= react_component("ArticleNavBar") %>
+
 <h1>New Article</h1>
 
 <%-# 'partial' view _form used to prevent repeated code-%>
 <%= render 'form' %>
 
 <%= link_to 'Back', articles_path %>
+
+<%= react_component("ArticleToolBar", create: true) %>

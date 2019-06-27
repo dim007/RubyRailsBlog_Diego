@@ -16,9 +16,9 @@ import {
 
 export default function ArticleCard(props) {
   return (
-    <Card style={{ maxWidth: "800px" }}>
+    <Card style={{ maxWidth: "600px" }}>
       <CardHeader>{props.title}</CardHeader>
-      <CardImg src={props.picture} />
+      <CardImg src={props.picture} height="300"/>
       <CardBody>
         <CardTitle>{props.title}</CardTitle>
         <p>{props.body}</p>
