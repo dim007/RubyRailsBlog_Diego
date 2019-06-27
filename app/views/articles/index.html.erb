@@ -1,8 +1,5 @@
 
-<%= react_component("ArticleToolBar", home: true) %>
-
-<h1>Ruby on Rails Portfolio Project</h1>
-
+<%= react_component("ArticleNavBar") %>
 
 <div class="container">
     <% @articles.each do |article| %>
@@ -14,3 +11,4 @@
     <% end %>
 </div>
 
+<%= react_component("ArticleToolBar", home: true) %>

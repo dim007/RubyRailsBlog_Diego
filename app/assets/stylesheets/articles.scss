@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
     background-image: image-url('background.gif');
-    background-size: cover;
+    background-size: contain;
+    background-attachment: fixed;
     color: #c5c2c2;
     font-size: 14px;
     line-height: 1.42857;
