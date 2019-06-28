@@ -5,7 +5,9 @@ class Article < ApplicationRecord
 
     # Article Image added
     has_one_attached :picture, dependent: :destroy
-    
+    has_one_attached :pictureMid, dependent: :destroy
+    has_one_attached :pictureBott, dependent: :destroy
+
     # this inherited func validates data in field 'title'
     validates :title, presence: true, length: { minimum: 5 }
 end

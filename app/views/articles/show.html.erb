@@ -4,7 +4,7 @@
 <br/>
 <br/>
 <div class="container">
-    <%= react_component("ArticleCardShow", title: @article.title , body: @article.text, id: @article.id, picture: url_for(@article.picture)) %>
+    <%= react_component("ArticleCardShow", title: @article.title , body1: @article.text, body2: @article.textMid, body3: @article.textBott, id: @article.id, picture1: url_for(@article.picture), picture2: url_for(@article.pictureMid), picture3: url_for(@article.pictureBott)) %>
     <%-# Display existing comments -%>
     <br/>
     <br/>
@@ -15,10 +15,12 @@
     <%= render 'comments/form' %>
     <br/>
     <%= render @article.comments %>
-    <br/>
-    <br/>
+
 </div>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
-
+<br/>
+<br/>
+<br/>
+<br/>
 <%= react_component("ArticleToolBar") %>
