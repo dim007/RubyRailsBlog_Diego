@@ -14,5 +14,9 @@ Getting AWS beanstalk to delpoy rails application
 			$ rails secret
 		Copy the result into Beanstalk -> Env Configuration -> Env Variables
 			SECRET_KEY_BASE = {Paste}
-	2. Run $ Rake db:migrate RAILS_ENV=production
-	3. Deploy on AWS
+	2. Run $ Rake db:migrate RAILS_ENV=production in console.
+	3. Run $ Rake assets:clobber //// rake assets:precompile
+	4. Zip directory without gemfile.lock and yarn.lock
+	5. Change environment variables in beanstalk: RACK_ENV,NODE_ENV,RAILS_ENV=development
+	6. Deploy on AWS
+	7. Change environment variables in beanstalk: RACK_ENV,NODE_ENV,RAILS_ENV=production

@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
     ## Add Authetication to prevent user/viewer access to Create & Delete & Edit
     ## Password on Github is different that real web domain password 
-    http_basic_authenticate_with name: "admin", password: "password", except:
+    http_basic_authenticate_with name: ENV['MASTER_USER'], password: ENV['MASTER_USER_PASSWORD'], except:
     [:index, :show]
 
     def index
