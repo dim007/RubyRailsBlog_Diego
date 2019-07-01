@@ -4,7 +4,20 @@
 <br/>
 <br/>
 <h1>New About Page</h1>
-<%= render 'form' %>
+<%= form_with scope: :about_page, url: about_page_index_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_area :title %>
+  </p>
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
 <%= link_to "Back", about_page_index_path  %>
 <br/>
 <br/>

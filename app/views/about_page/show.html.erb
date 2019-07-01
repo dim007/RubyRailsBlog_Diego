@@ -11,7 +11,9 @@
     </p>
 <%= link_to "Back", about_page_index_path  %>
 <%= link_to "Edit", edit_about_page_path(@aboutpage)%>
-
+<td><%= link_to 'Destroy', about_page_path(@aboutpage),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %></td>
 <br/>
 <br/>
 <br/>

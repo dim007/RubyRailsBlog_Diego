@@ -22,7 +22,7 @@ class AboutPageController < ApplicationController
         end
     end
     def update
-        @aboutpage = @AboutPage.find(params[:id])
+        @aboutpage = AboutPage.find(params[:id])
         if @aboutpage.update(aboutpage_params)
             redirect_to @aboutpage
         else
@@ -30,8 +30,8 @@ class AboutPageController < ApplicationController
         end
     end
     def destroy
-        @article = Article.find(params[:id])
-        @article.destroy
+        @aboutpage = AboutPage.find(params[:id])
+        @aboutpage.destroy
         redirect_to about_page_index_path
     end
     private
