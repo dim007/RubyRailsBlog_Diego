@@ -1,6 +1,6 @@
 class AboutPageController < ApplicationController
-    # http_basic_authenticate_with name: ENV['MASTER_USER'], password: ENV['MASTER_USER_PASSWORD'], except:
-    # [:index, :show]
+    http_basic_authenticate_with name: ENV['MASTER_USER'], password: ENV['MASTER_USER_PASSWORD'], except:
+    [:index, :show]
     def index
         @aboutpages = AboutPage.all
     end

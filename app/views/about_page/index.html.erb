@@ -1,23 +1,40 @@
+<head>
+<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+<style>
+header {
+    font-family: 'Audiowide';font-size: 22px;
+}
+</style>
+</head>
+
 <%= react_component("ArticleNavBar") %>
 <br/>
 <br/>
 <br/>
 <br/>
 <div>
+<div align="right">
+    <%= link_to "Back", articles_path  %>
+    <%= link_to "New", new_about_page_path %>
+</div>
 <% @aboutpages.each do |page| %>
+
     <tr>
-      <td><%= page.title %></td>
-      <td><%= page.text %></td>
+    <header>
+        <div class="aboutPage_header" align="center">
+            <td><%= page.title %></td>
+        </div>
+    </header>
+        <br/>
+        <br/>
+        <div class="aboutPage_body" align="center"> 
+            <td><%= page.text %></td>
+        </div>
     </tr>
     <div align="right">
     <td><%= link_to 'Show', about_page_path(page) %></td>
     </div>
 <% end %>
-</div>
-<div align="right">
-<%= link_to "Back", articles_path  %>
-<%= link_to "New", new_about_page_path %>
-</div>
 <br/>
 <br/>
 <br/>
