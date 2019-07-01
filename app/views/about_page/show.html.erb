@@ -1,0 +1,19 @@
+<%= react_component("ArticleNavBar") %>
+<br/>
+<br/>
+<br/>
+<br/>
+    <p>
+        <%= @aboutpage.title %>
+    </p>
+    <p>
+        <%= @aboutpage.text %>
+    </p>
+<%= link_to "Back", about_page_index_path  %>
+<%= link_to "Edit", edit_about_page_path(@aboutpage)%>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<%= react_component("ArticleToolBar") %>

@@ -54,7 +54,7 @@ export default class ArticleNavBar extends React.Component {
         <Collapse open={this.state.collapseOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink active href="/about">
+              <NavLink active href="/about_page">
                 About
               </NavLink>
             </NavItem>
@@ -68,15 +68,10 @@ export default class ArticleNavBar extends React.Component {
           </Nav>
           <Nav navbar className="ml-auto"> 
            <NavItem>
-              <NavLink href="/articles/new" active>
+              <NavLink href="/articles/new" >
                 Create Article
               </NavLink>
            </NavItem>
-           <NavItem>
-              <NavLink href="#" active>
-                Sign In
-              </NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

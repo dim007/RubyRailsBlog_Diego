@@ -27,7 +27,7 @@ export default function ArticleCard(props) {
       <CardFooter>
         <ButtonToolbar>
           <ButtonGroup size="sm">
-            <Button outline theme="info" href={'/articles/' + props.id}>Comment</Button>
+            <Button theme="info" href={'/articles/' + props.id}>Comment</Button>
             <Button outline theme="warning" href={'/articles/' + props.id + '/edit'}>Edit</Button>
             <Button outline data-confirm="Are you sure?" data-method='delete' href={'/articles/' + props.id} theme='danger'>Delete</Button>
           </ButtonGroup>

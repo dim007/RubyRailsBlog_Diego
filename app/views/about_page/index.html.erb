@@ -1,0 +1,22 @@
+<%= react_component("ArticleNavBar") %>
+<br/>
+<br/>
+<br/>
+<br/>
+<div>
+<% @aboutpages.each do |page| %>
+    <tr>
+      <td><%= page.title %></td>
+      <td><%= page.text %></td>
+    </tr>
+<% end %>
+</div>
+<div align="right">
+<%= link_to "Back", articles_path  %>
+<%= link_to "New", new_about_page_path %>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<%= react_component("ArticleToolBar") %>

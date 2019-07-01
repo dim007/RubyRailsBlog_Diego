@@ -18,7 +18,7 @@ export default function ArticleToolBar(props) {
                 </NavItem>
                 <NavItem>
                     <NavLink href="https://www.linkedin.com/in/diego-martinez-001/">
-                    <img src="https://www.iconsdb.com/icons/preview/gray/linkedin-3-xxl.png" width="30" height="30" />
+                    <img src="https://www.macupdate.com/images/icons512/47464.png" width="30" height="30" />
                     </NavLink>
                 </NavItem>
                 <NavItem>
