@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_183016) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
+    t.text "cardText"
     t.text "text"
     t.text "textMid"
     t.text "textBott"

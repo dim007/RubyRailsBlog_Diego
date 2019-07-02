@@ -37,7 +37,7 @@ header {
     <div align="center">
         <% @articles.each do |article| %>
             <div id='ArticleCardDiv'>
-                <%= react_component("ArticleCard", title: article.title , body: article.text, id: article.id, picture: url_for(article.picture)) %>
+                <%= react_component("ArticleCard", title: article.title , body: article.cardText, id: article.id, picture: url_for(article.picture)) %>
                 <br/>
                 <br/>
             </div>
