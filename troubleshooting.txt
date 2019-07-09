@@ -20,3 +20,8 @@ Getting AWS beanstalk to delpoy rails application
 	5. Change environment variables in beanstalk: RACK_ENV,NODE_ENV,RAILS_ENV=development
 	6. Deploy on AWS
 	7. Change environment variables in beanstalk: RACK_ENV,NODE_ENV,RAILS_ENV=production
+	
+	
+Getting Error when deployed in production mode:
+	ERROR 1: ActiveModel::UnknownAttributeError (unknown attribute 'cardText' for Article.):
+		Cause: Added new variable to model without migrating db
